@@ -87,7 +87,7 @@ function getGiphy(subject) {
         // This is a still giph
         const giphy = data.data[i].images.original_still.url;
         // This is the running giph
-        //   const giphy = data.data[0].images.original.url;
+        // const giphy = data.data[i].images.original.url;
         var oImg = document.createElement("img");
         oImg.setAttribute("src", giphy);
         oImg.setAttribute("alt", `This is a ${subject} Giphy`);
