@@ -1,1 +1,76 @@
-
+body {
+  background: rgb(0, 155, 255);
+  background: linear-gradient(
+    14deg,
+    rgba(0, 155, 255, 1) 0%,
+    rgba(192, 192, 170, 1) 0%,
+    rgba(28, 239, 255, 1) 100%
+  );
+  min-height: calc(100vh);
+  font-family: "PT Serif", serif;
+}
+.container {
+  max-width: 170rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  & header {
+    text-align: center;
+    margin-bottom: 2rem;
+    & h1 {
+      margin: 0;
+      padding: 1.5rem;
+      font-size: 7rem;
+      letter-spacing: 0.6rem;
+      font-family: "Abril Fatface", cursive;
+    }
+    & span {
+      font-size: 2.4rem;
+    }
+  }
+}
+.content {
+  background: #fff;
+  min-height: 60rem;
+  margin: 3.5rem auto;
+  border-radius: 1rem;
+}
+main {
+  background: rgb(212, 212, 212);
+  height: 100%;
+  min-height: 46rem;
+  border-radius: 0 0 1rem 1rem;
+  & #button_options {
+    display: flex;
+    padding: 1rem;
+    & .buttons {
+      flex-basis: 80%;
+      display: flex;
+      flex-wrap: wrap;
+      & .button {
+        font-size: 2.4rem;
+        background: #fff;
+        padding: 1rem 1.5rem;
+        margin: 1rem;
+        border-radius: 1rem;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+    }
+    & .new_button {
+      display: flex;
+      flex-direction: column;
+      & label {
+        font-size: 2.4rem;
+        color: #fff;
+      }
+      & input[type="text"] {
+        width: 100%;
+        outline: none;
+        font-size: 2rem;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}

@@ -1,1 +1,96 @@
-/* No CSS *//*# sourceMappingURL=main.css.map */
+body {
+  background: #009bff;
+  background: linear-gradient(14deg, #009bff 0%, #c0c0aa 0%, #1cefff 100%);
+  min-height: calc(100vh);
+  font-family: "PT Serif", serif;
+}
+
+.container {
+  max-width: 170rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+
+.container header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container header h1 {
+  margin: 0;
+  padding: 1.5rem;
+  font-size: 7rem;
+  letter-spacing: 0.6rem;
+  font-family: "Abril Fatface", cursive;
+}
+
+.container header span {
+  font-size: 2.4rem;
+}
+
+.content {
+  background: #fff;
+  min-height: 60rem;
+  margin: 3.5rem auto;
+  border-radius: 1rem;
+}
+
+main {
+  background: #d4d4d4;
+  height: 100%;
+  min-height: 46rem;
+  border-radius: 0 0 1rem 1rem;
+}
+
+main #button_options {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+}
+
+main #button_options .buttons {
+  -ms-flex-preferred-size: 80%;
+      flex-basis: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main #button_options .buttons .button {
+  font-size: 2.4rem;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+main #button_options .buttons .button:hover {
+  cursor: pointer;
+}
+
+main #button_options .new_button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main #button_options .new_button label {
+  font-size: 2.4rem;
+  color: #fff;
+}
+
+main #button_options .new_button input[type="text"] {
+  width: 100%;
+  outline: none;
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+/*# sourceMappingURL=main.css.map */
