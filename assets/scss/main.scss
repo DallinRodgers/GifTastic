@@ -37,7 +37,6 @@ body {
 }
 main {
   background: rgb(212, 212, 212);
-  height: 100%;
   min-height: 46rem;
   border-radius: 0 0 1rem 1rem;
   & #button_options {
@@ -50,7 +49,8 @@ main {
       & .button {
         font-size: 2.4rem;
         background: #fff;
-        padding: 1rem 1.5rem;
+        max-height: 4rem;
+        padding: 1rem 1rem 0 1rem;
         margin: 1rem;
         border-radius: 1rem;
         &:hover {
@@ -61,9 +61,11 @@ main {
     & .new_button {
       display: flex;
       flex-direction: column;
+      background: #fff;
+      padding: 2rem;
+      margin: 1rem;
       & label {
         font-size: 2.4rem;
-        color: #fff;
       }
       & input[type="text"] {
         width: 100%;
@@ -71,6 +73,35 @@ main {
         font-size: 2rem;
         margin: 0.5rem 0;
       }
+      & #search {
+        font-size: 2.4rem;
+        border: none;
+        background: rgb(0, 155, 255);
+        background: linear-gradient(
+          14deg,
+          rgba(0, 155, 255, 1) 0%,
+          rgba(192, 192, 170, 1) 0%,
+          rgba(28, 239, 255, 1) 100%
+        );
+        padding: 0.5rem 0;
+        &:hover {
+          cursor: pointer;
+        }
+        &:focus {
+          border: none;
+          outline: none;
+        }
+        &:active {
+          border: none;
+        }
+      }
+    }
+  }
+  & #giphs {
+    & .giph {
+      max-width: 40rem;
+      max-height: 40rem;
+      margin: 1.5rem;
     }
   }
 }
