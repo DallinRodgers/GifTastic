@@ -98,10 +98,15 @@ main {
     }
   }
   & #giphs {
+    display: flex;
+    flex-wrap: wrap;
     & .giph {
       max-width: 40rem;
       max-height: 40rem;
       margin: 1.5rem;
+    }
+    & .rating {
+      font-size: 2.4rem;
     }
   }
 }

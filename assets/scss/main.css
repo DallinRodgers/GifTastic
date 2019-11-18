@@ -117,9 +117,21 @@ main #button_options .new_button #search:active {
   border: none;
 }
 
+main #giphs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 main #giphs .giph {
   max-width: 40rem;
   max-height: 40rem;
   margin: 1.5rem;
+}
+
+main #giphs .rating {
+  font-size: 2.4rem;
 }
 /*# sourceMappingURL=main.css.map */
