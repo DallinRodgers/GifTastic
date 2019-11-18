@@ -83,24 +83,30 @@ function getGiphy(subject) {
     .then(data => {
       const giphsArray = data.data;
       for (let i = 0; i < data.data.length; i++) {
-        // This is a still giph
         const rating = giphsArray[i].rating;
-        // const giphy = giphsArray[i].images.original_still.url;
+        // This is a still giph
+        const giphyStill = giphsArray[i].images.original_still.url;
         // This is the running giph
-        const giphy = data.data[i].images.original.url;
+        const giphyPlaying = data.data[i].images.original.url;
+        // Create img element
         var oImg = document.createElement("img");
-        oImg.setAttribute("src", giphy);
+        oImg.setAttribute("src", giphyStill);
         oImg.setAttribute("alt", `This is a ${subject} Giphy`);
         oImg.setAttribute("class", "giph still");
-        // oImg.innerHTML = `<img src=${giphy} alt="This is a ${subject} Giphy" class="giph still"`;
+        oImg.setAttribute("data-still", giphyStill);
+        oImg.setAttribute("data-playing", giphyPlaying);
+        // Create div element
         const giphDIV = document.createElement("div");
         giphDIV.setAttribute("class", "giphDiv");
         giphDIV.innerHTML = `<p class='rating'>Rating: ${rating}<p>`;
-        // giphs.appendChild(oImg);
+        // Append created div to #giphs in index.html
         giphs.appendChild(giphDIV);
+        // Append img to created div, this is what placed the giph below the rating
         giphDIV.appendChild(oImg);
       }
-      addListeners(giphsArray, "giph");
+      // Create an array for all giphs
+      const arrayOfGiphs = document.querySelectorAll(".giph");
+      addListeners(arrayOfGiphs, "giph");
     })
     .catch(error => console.log(error));
 }
@@ -114,18 +120,24 @@ function addListeners(array, item) {
         getGiphy(topics[i]);
       });
     }
-  } else if (item === "giph") {
-    console.log(array);
-    // add event listeners to giphs
-    // for (let i = 0; i < giphArray.length; i++) {
-    // check class list
-    // If still remove still and add playing
-    // update src to correct url
-    // this.setAttribute("src", giphy);
-    // }
+  } else {
     for (let i = 0; i < array.length; i++) {
       array[i].addEventListener("click", function() {
-        console.log("you clicked a giph");
+        // check class list
+        // If still remove still and add playing
+        if (array[i].classList.contains("still")) {
+          array[i].classList.remove("still");
+          array[i].classList.add("playing");
+          const playing = array[i].getAttribute("data-playing");
+          array[i].setAttribute("src", playing);
+        } else if (array[i].classList.contains("playing")) {
+          array[i].classList.remove("playing");
+          array[i].classList.add("still");
+          const still = array[i].getAttribute("data-still");
+          array[i].setAttribute("src", still);
+        }
+        // update src to correct url
+        // this.setAttribute("src", giphy);
       });
     }
   }
