@@ -123,22 +123,23 @@ function addListeners(array, item) {
   } else {
     for (let i = 0; i < array.length; i++) {
       array[i].addEventListener("click", function() {
-        // check class list
-        // If still remove still and add playing
         if (array[i].classList.contains("still")) {
-          array[i].classList.remove("still");
-          array[i].classList.add("playing");
-          const playing = array[i].getAttribute("data-playing");
-          array[i].setAttribute("src", playing);
+          // array[i].classList.remove("still");
+          // array[i].classList.add("playing");
+          // const playing = array[i].getAttribute("data-playing");
+          // array[i].setAttribute("src", playing);
+          changeState(array[i], "still", "playing", "data-playing");
         } else if (array[i].classList.contains("playing")) {
-          array[i].classList.remove("playing");
-          array[i].classList.add("still");
-          const still = array[i].getAttribute("data-still");
-          array[i].setAttribute("src", still);
+          changeState(array[i], "playing", "still", "data-still");
         }
-        // update src to correct url
-        // this.setAttribute("src", giphy);
       });
     }
   }
+}
+function changeState(element, remove, add, data) {
+  const el = element;
+  el.classList.remove(remove);
+  el.classList.add(add);
+  const state = el.getAttribute(data);
+  el.setAttribute("src", state);
 }
