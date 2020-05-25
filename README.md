@@ -1,5 +1,5 @@
 # GifTastic
- This project uses the Giphy API to display 10 giphs from Giphy of the users choosing
+ This project uses the Giphy API to display 12 giphs from Giphy of the users choosing
  
  Languages/Technology Used: HTML5, CSS3, JavaScript ES6, API (promises)
 
