@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link
-      href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Serif&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="assets/css/reset.css" />
@@ -13,42 +13,36 @@
     <title>GifTastic</title>
   </head>
   <body>
-    <div class="container">
-      <div class="content">
-        <header>
-          <h1>This is GifTastic!!</h1>
-          <span>A simple GIPHY API tool to get 10 giphs</span>
-        </header>
-        <main>
-          <div id="button_options">
-            <div class="buttons">
-              <!-- <div class="giphDiv">
-                <p class="rating">Rating: g</p>
-                <img src="#" alt="giph here">
+    <section class="page">
+      <div class="container">
+        <div class="content">
+          <header>
+            <h1>This is GifTastic!!</h1>
+            <span>A simple GIPHY API tool to get 10 giphs</span>
+          </header>
+          <main>
+            <div id="button_options">
+              <div class="buttons">
+                <!-- <div class="giphDiv">
+                  <p class="rating">Rating: g</p>
+                  <img src="#" alt="giph here">
+                </div>
+                <div class="giphDiv">
+                  <p class="rating">Rating: g</p>
+                  <img src="#" alt="giph here">
+                </div> -->
               </div>
-              <div class="giphDiv">
-                <p class="rating">Rating: g</p>
-                <img src="#" alt="giph here">
+              <div class="new_button">
+                <label for="newBtn">Add new search option</label>
+                <input type="text" id="newBtn" />
+                <button id="search">Submit</button>
               </div>
-              <div class="giphDiv">
-                <p class="rating">Rating: g</p>
-                <img src="#" alt="giph here">
-              </div>
-              <div class="giphDiv">
-                <p class="rating">Rating: g</p>
-                <img src="#" alt="giph here">
-              </div> -->
             </div>
-            <div class="new_button">
-              <label for="newBtn">Add new search option</label>
-              <input type="text" id="newBtn" />
-              <button id="search">Submit</button>
-            </div>
-          </div>
-          <div id="giphs"></div>
-        </main>
+            <div id="giphs"></div>
+          </main>
+        </div>
       </div>
-    </div>
+    </section>
     <script src="assets/js/main.js"></script>
   </body>
 </html>
