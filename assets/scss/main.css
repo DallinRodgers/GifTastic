@@ -180,6 +180,10 @@ main #giphs .giphDiv .giph {
   max-height: 50rem;
 }
 
+main #giphs .giphDiv .giph:hover {
+  cursor: pointer;
+}
+
 main #giphs .rating {
   font-size: 2.4rem;
 }
