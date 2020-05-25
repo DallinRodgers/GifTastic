@@ -7,7 +7,7 @@ let topics = [
   "goat",
   "snake",
   "bird",
-  "hawk"
+  "hawk",
 ];
 
 const newTopic = document.querySelector("#newBtn");
@@ -24,7 +24,7 @@ search.addEventListener("click", () => {
 });
 
 // Event listener for enter key
-document.addEventListener("keyup", e => {
+document.addEventListener("keyup", (e) => {
   if (e.keyCode === 13 && newTopic.value !== "" && newTopic.value !== " ") {
     getNewValue();
   }
@@ -73,14 +73,14 @@ function getGiphy(subject) {
   //   This error is prevented when you use https://cors-anywhere.herokuapp.com/
   // Access to fetch at has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
   fetch(
-    `https://cors-anywhere.herokuapp.com/https://api.giphy.com/v1/gifs/search?api_key=OLXBqiRTp41fGqAd42KwrJtbhuKQIhYJ&q=${subject}&limit=10&offset=0&rating=G&lang=en`
+    `https://api.giphy.com/v1/gifs/search?api_key=OLXBqiRTp41fGqAd42KwrJtbhuKQIhYJ&q=${subject}&limit=12&offset=0&rating=G&lang=en`
   )
-    .then(result => {
+    .then((result) => {
       // body: ReadableStream, this is found in the returned results from the api
       // This will return a promise and convert it from json to javascript
       return result.json();
     })
-    .then(data => {
+    .then((data) => {
       const giphsArray = data.data;
       for (let i = 0; i < data.data.length; i++) {
         const rating = giphsArray[i].rating;
@@ -108,21 +108,21 @@ function getGiphy(subject) {
       const arrayOfGiphs = document.querySelectorAll(".giph");
       addListeners(arrayOfGiphs, "giph");
     })
-    .catch(error => console.log(error));
+    .catch((error) => console.log(error));
 }
 
 // Add event listeners for each new button
 function addListeners(array, item) {
   if (item === "btn") {
     for (let i = 0; i < array.length; i++) {
-      array[i].addEventListener("click", function() {
+      array[i].addEventListener("click", function () {
         clearGiphs();
         getGiphy(topics[i]);
       });
     }
   } else {
     for (let i = 0; i < array.length; i++) {
-      array[i].addEventListener("click", function() {
+      array[i].addEventListener("click", function () {
         if (array[i].classList.contains("still")) {
           // array[i].classList.remove("still");
           // array[i].classList.add("playing");
