@@ -1,13 +1,14 @@
-body {
-  background: rgb(0, 155, 255);
-  background: linear-gradient(
-    14deg,
-    rgba(0, 155, 255, 1) 0%,
-    rgba(192, 192, 170, 1) 0%,
-    rgba(28, 239, 255, 1) 100%
-  );
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.page {
+  background: #2f048c;
+  background: linear-gradient(14deg, #2f048c 15%, #bf1784 100%);
   min-height: calc(100vh);
-  font-family: "PT Serif", serif;
+  font-family: "Black Ops One", cursive;
+  color: #f21bb9;
 }
 .container {
   max-width: 170rem;
@@ -16,13 +17,16 @@ body {
   border-radius: 1rem;
   & header {
     text-align: center;
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    background: black;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
     & h1 {
       margin: 0;
       padding: 1.5rem;
       font-size: 7rem;
       letter-spacing: 0.6rem;
-      font-family: "Abril Fatface", cursive;
+      text-shadow: 1px 1px #07dbf2;
     }
     & span {
       font-size: 2.4rem;
@@ -30,27 +34,37 @@ body {
   }
 }
 .content {
-  background: #fff;
   min-height: 60rem;
   margin: 3.5rem auto;
   border-radius: 1rem;
+  // box-shadow: 1rem 1rem 1rem #f2ce1b;
+  border: 1px solid black;
 }
 main {
-  background: rgb(212, 212, 212);
+  background: black;
   min-height: 46rem;
   border-radius: 0 0 1rem 1rem;
   & #button_options {
     display: flex;
     padding: 1rem;
     & .buttons {
-      flex-basis: 80%;
+      flex-basis: 75%;
       display: flex;
       flex-wrap: wrap;
+      background: #2f048c;
+      background: linear-gradient(14deg, #2f048c 15%, #bf1784 100%);
+      border-radius: 1rem;
+      height: 15rem;
+      max-height: 15rem;
+      overflow: auto;
       & .button {
         font-size: 2.4rem;
-        background: #fff;
-        max-height: 4rem;
-        padding: 1rem 1rem 0 1rem;
+        background: #07dbf2;
+        max-height: 5rem;
+        min-height: 5rem;
+        display: flex;
+        align-items: center;
+        padding: 1rem;
         margin: 1rem;
         border-radius: 1rem;
         &:hover {
@@ -59,30 +73,33 @@ main {
       }
     }
     & .new_button {
+      flex-basis: 25%;
       display: flex;
       flex-direction: column;
-      background: #fff;
+      background: #2f048c;
+      background: linear-gradient(315deg, #2f048c 15%, #bf1784 100%);
+      height: 15rem;
       padding: 2rem;
-      margin: 1rem;
+      margin-left: 1rem;
+      border-radius: 1rem;
       & label {
-        font-size: 2.4rem;
+        font-size: 2.8rem;
+        text-shadow: 1px 1px #07dbf2;
       }
       & input[type="text"] {
         width: 100%;
         outline: none;
         font-size: 2rem;
         margin: 0.5rem 0;
+        padding: 0.1rem 0.5rem;
+        border-radius: 1rem;
+        color: #f21bb9;
       }
       & #search {
         font-size: 2.4rem;
         border: none;
-        background: rgb(0, 155, 255);
-        background: linear-gradient(
-          14deg,
-          rgba(0, 155, 255, 1) 0%,
-          rgba(192, 192, 170, 1) 0%,
-          rgba(28, 239, 255, 1) 100%
-        );
+        color: #f21bb9;
+        background: #07dbf2;
         padding: 0.5rem 0;
         &:hover {
           cursor: pointer;
@@ -98,12 +115,20 @@ main {
     }
   }
   & #giphs {
-    display: flex;
-    flex-wrap: wrap;
-    & .giph {
-      max-width: 40rem;
-      max-height: 40rem;
-      margin: 1.5rem;
+    display: grid;
+    padding: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    & .giphDiv {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      & .giph {
+        width: 100%;
+        height: auto;
+        max-height: 50rem;
+      }
     }
     & .rating {
       font-size: 2.4rem;

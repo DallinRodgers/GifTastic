@@ -1,8 +1,16 @@
-body {
-  background: #009bff;
-  background: linear-gradient(14deg, #009bff 0%, #c0c0aa 0%, #1cefff 100%);
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.page {
+  background: #2f048c;
+  background: linear-gradient(14deg, #2f048c 15%, #bf1784 100%);
   min-height: calc(100vh);
-  font-family: "PT Serif", serif;
+  font-family: "Black Ops One", cursive;
+  color: #f21bb9;
 }
 
 .container {
@@ -14,7 +22,10 @@ body {
 
 .container header {
   text-align: center;
-  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  background: black;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .container header h1 {
@@ -22,7 +33,7 @@ body {
   padding: 1.5rem;
   font-size: 7rem;
   letter-spacing: 0.6rem;
-  font-family: "Abril Fatface", cursive;
+  text-shadow: 1px 1px #07dbf2;
 }
 
 .container header span {
@@ -30,14 +41,14 @@ body {
 }
 
 .content {
-  background: #fff;
   min-height: 60rem;
   margin: 3.5rem auto;
   border-radius: 1rem;
+  border: 1px solid black;
 }
 
 main {
-  background: #d4d4d4;
+  background: black;
   min-height: 46rem;
   border-radius: 0 0 1rem 1rem;
 }
@@ -50,20 +61,33 @@ main #button_options {
 }
 
 main #button_options .buttons {
-  -ms-flex-preferred-size: 80%;
-      flex-basis: 80%;
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background: #2f048c;
+  background: linear-gradient(14deg, #2f048c 15%, #bf1784 100%);
+  border-radius: 1rem;
+  height: 15rem;
+  max-height: 15rem;
+  overflow: auto;
 }
 
 main #button_options .buttons .button {
   font-size: 2.4rem;
-  background: #fff;
-  max-height: 4rem;
-  padding: 1rem 1rem 0 1rem;
+  background: #07dbf2;
+  max-height: 5rem;
+  min-height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem;
   margin: 1rem;
   border-radius: 1rem;
 }
@@ -73,6 +97,8 @@ main #button_options .buttons .button:hover {
 }
 
 main #button_options .new_button {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,13 +106,17 @@ main #button_options .new_button {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background: #fff;
+  background: #2f048c;
+  background: linear-gradient(315deg, #2f048c 15%, #bf1784 100%);
+  height: 15rem;
   padding: 2rem;
-  margin: 1rem;
+  margin-left: 1rem;
+  border-radius: 1rem;
 }
 
 main #button_options .new_button label {
-  font-size: 2.4rem;
+  font-size: 2.8rem;
+  text-shadow: 1px 1px #07dbf2;
 }
 
 main #button_options .new_button input[type="text"] {
@@ -94,13 +124,16 @@ main #button_options .new_button input[type="text"] {
   outline: none;
   font-size: 2rem;
   margin: 0.5rem 0;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  color: #f21bb9;
 }
 
 main #button_options .new_button #search {
   font-size: 2.4rem;
   border: none;
-  background: #009bff;
-  background: linear-gradient(14deg, #009bff 0%, #c0c0aa 0%, #1cefff 100%);
+  color: #f21bb9;
+  background: #07dbf2;
   padding: 0.5rem 0;
 }
 
@@ -118,17 +151,33 @@ main #button_options .new_button #search:active {
 }
 
 main #giphs {
+  display: -ms-grid;
+  display: grid;
+  padding: 2rem;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  gap: 1rem;
+}
+
+main #giphs .giphDiv {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-main #giphs .giph {
-  max-width: 40rem;
-  max-height: 40rem;
-  margin: 1.5rem;
+main #giphs .giphDiv .giph {
+  width: 100%;
+  height: auto;
+  max-height: 50rem;
 }
 
 main #giphs .rating {
